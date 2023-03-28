@@ -44,9 +44,27 @@ class CustomerController extends Controller
         return view('customer.editCustomerAcc',['customers'=>$data]);
     }
 
-    public function editCustomer(Request $request)
+    public function updateUser(Request $request)
     {   
-        return $request->id;
+        //dd($request);
+        $validated=$request->validate([
+            'lastName'=>['required'],
+            'firstName'=>['required'],
+            'email'=>['required'],
+            'contactNumber'=>['required'],
+            'address'=>['required'],
+        ]);
+
+        $data = Customer::find($request->id);
+
+        $data->lastName=$request->lastName;
+        $data->firstName=$request->firstName;
+        $data->email=$request->email;
+        $data->contactNumber=$request->contactNumber;
+        $data->address=$request->address;
+
+        $data->save();
+        return redirect("/")->with('success','Customer Data Edited Successfully');
     }
     
 

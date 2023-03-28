@@ -8,11 +8,19 @@
         <p>Invalid Account</p>
     @enderror
 
+    <div class="mb-3">
+      <label for="id" class="form-label">ID</label>
+      <input 
+      type="hidden"
+      class="form-control" 
+      name="id"
+      value="{{$customers->id}}">
+    </div>
 
     <div class="mb-3">
-      <label for="LastName" class="form-label">Last Name</label>
+      <label for="lastName" class="form-label">Last Name</label>
       <input 
-      type="text" 
+      type="hidden" 
       class="form-control" 
       name="lastName"
       value="{{$customers->lastName}}">
