@@ -54,7 +54,7 @@
           
           </td>
           <td class="px-6 py-4">
-          <button type="button" class="btn btn-warning"><a href="{{url('/editUser'.$customer->id)}}" style="text-dark">Edit</a></button>
+          <button type="button" class="btn btn-warning"><a href="editUser/{{$customer->id}}" style="text-decoration: none">Edit</a></button>
           </td>
           @endforeach
   </tr>

@@ -40,7 +40,7 @@ class CustomerController extends Controller
         return redirect("/");
     }
     public function editUser($id){
-        $data = Customer::where('id',$id)->get();
+        $data =Customer::findorfail($id);
         return view('customer.editCustomerAcc',['customers'=>$data]);
     }
 
